@@ -129,7 +129,6 @@ public class User implements UserDetails{
     	return false;
     }
 
-
 	@Override
     public boolean equals(Object o) {
         if (this == o) return true;
