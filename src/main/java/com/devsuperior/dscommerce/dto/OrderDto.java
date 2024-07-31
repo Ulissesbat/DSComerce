@@ -8,6 +8,8 @@ import com.devsuperior.dscommerce.entities.Order;
 import com.devsuperior.dscommerce.entities.OrderItem;
 import com.devsuperior.dscommerce.entities.OrderStatus;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class OrderDto {
 
 	private Long id;
@@ -18,6 +20,7 @@ public class OrderDto {
 	
 	private PaymentDto payment;
 	
+	@NotEmpty(message = "Deve ter pelo menos uma categoria")
 	private List<OrderItemDto> items = new ArrayList<>();
 
 	public OrderDto(Long id, Instant moment, OrderStatus status, ClientDto client, PaymentDto payment) {
